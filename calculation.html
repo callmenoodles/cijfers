@@ -1,0 +1,126 @@
+<!doctype html>
+<html>
+
+    <head>
+        <title>Cijfers</title>
+
+        <link href="https://fonts.googleapis.com/css?family=Roboto:100" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+        <style>
+            body {
+                background: white;
+            }
+
+            #input {
+                margin-left:30px;
+                margin-top:40px;
+                position: relative;
+                top: 0;
+                left: 0;
+                width:50%;
+                float:left;
+                z-index: 100;
+            }
+
+            #output {
+                margin-right:40px;
+                margin-top:25px;
+                position: relative;
+                top: 0;
+                right: 0;
+                width: 30%;
+                float:right;
+            }
+
+            #output-inner {
+                height: 174px;
+            }
+
+            #grade {
+                text-align: center;
+                line-height: 245px;
+                font-size: 6em;
+                font-family: 'Roboto', sans-serif;
+
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            #particles-js{
+                width: 100%;
+                background-color: #FFF;
+                background-image: url('');
+                background-size: cover;
+                background-position: 50% 50%;
+                background-repeat: no-repeat;
+                position: fixed;
+            }
+
+            label {
+                -moz-user-select: -moz-none;
+                -khtml-user-select: none;
+                -webkit-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+
+            #logout {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                text-decoration: none;
+                color: gray;
+            }   
+        </style>
+    </head>
+
+    <body>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>    
+        <script type="text/javascript" src="particlesjs/particles.min.js"></script>
+
+        <div id="particles-js"></div>
+        <script src="particlesjs/particles.min.js"></script>
+        <script src="app.js"></script>
+
+        <a href="index.html" id="logout" onclick="logout()">Log uit</a>
+
+        <br>
+        <div id="input">
+            <form class="ui form">
+                <div class="field">
+                    <label for="subject">Vak</label>
+                    <div class="ui fluid selection dropdown">
+                        <input type="hidden" name="subject">
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Kies een vak...</div>
+                        <div class="menu" id="subjects"></div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label for="weight">Weging volgende toets</label>
+                    <input type="number" name="weight" id="weight" value="2" placeholder="Weging" min="1"></input>
+                </div>
+                <br>
+                <div class="fluid ui primary button" id="calculate">Bereken</div>
+            </form>
+        </div>
+
+        <div id="output">
+            <div id="output-inner">
+                <h1 id="grade">-</h1>
+            </div>
+        </div>
+
+        <script>
+            $('.ui.dropdown').dropdown();
+        </script>
+    </body>
+
+</html>
